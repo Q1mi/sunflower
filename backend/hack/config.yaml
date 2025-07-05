@@ -1,0 +1,14 @@
+
+# CLI tool, only in development environment.
+# https://goframe.org/docs/cli
+gfcli:
+  gen:
+    dao:
+      - link: "mysql:root:root1234@tcp(127.0.0.1:13306)/db4?charset=utf8mb4&parseTime=True&loc=Local"
+        descriptionTag: true
+        tables: "userinfo,user_checkin_records,user_monthly_bonus_log,user_points,user_points_transactions"
+
+  docker:
+    build: "-a amd64 -s linux -p temp -ew"
+    tagPrefixes:
+      - my.image.pub/my-app
