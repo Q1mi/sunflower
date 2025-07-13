@@ -2,16 +2,19 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
+	"github.com/gogf/gf/v2/os/gcron"
 
 	"backend/internal/controller/checkin"
 	"backend/internal/controller/hello"
 	"backend/internal/controller/points"
 	"backend/internal/controller/user"
 	"backend/internal/logic/middleware"
+	"backend/internal/service/checkin/impl"
 	"backend/utility/injection"
 )
 
@@ -43,6 +46,15 @@ var (
 					points.NewV1(),
 				)
 			})
+			// 开启定时任务
+			_, err = gcron.Add(ctx, "# 0 18 * * *", func(ctx context.Context) {
+				g.Log().Print(ctx, "每天18点跑定时任务")
+				err := impl.CheckAndNotify(ctx, 2)
+				fmt.Printf("CheckAndNotify err: %v\n", err)
+			})
+			if err != nil {
+				panic(err)
+			}
 			s.Run()
 			return nil
 		},
