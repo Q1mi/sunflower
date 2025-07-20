@@ -14,11 +14,20 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
+## 视频教程
+
+[B站视频教程](https://www.bilibili.com/cheese/play/ss167267536)
+
+
 ## Project Setup
 
 前置依赖，需要安装 node 和 npm .
 
-安装依赖
+具体参考：[https://nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download)
+
+**重要：执行以下命令前，确保处于 `sunflower/frontend` 目录下。**
+
+### 安装依赖
 
 ```sh
 npm install

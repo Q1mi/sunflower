@@ -13,15 +13,18 @@
 
 ## 技术栈
 
-### 后端
+### 后端（backend）
 - GoFrame：用于快速开发Go语言项目，提供丰富的功能模块和中间件。
 - Redis：用于缓存。
 - MySQL：用于存储数据。
 - Snowflake：用于生成全局唯一ID。
 
-### 前端
+### 前端（frontend）
 - Vue3：最新的Vue版本，提供了更强大的功能和更好的性能。
 - Vite：下一代前端开发与构建工具，支持热更新等功能。
+
+## 运行
+请分别查看`backend/README.md`和`frontend/README.md`中的运行说明。
 
 ## 视频教程
 
