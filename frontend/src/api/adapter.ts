@@ -331,7 +331,7 @@ export async function userLogin(loginData: LoginRequest, remember: boolean = fal
     })
 
     console.error('[User Login] 登录失败:', standardError.message)
-    throw new Error(standardError.userMessage)
+    throw new Error(standardError.message)
   }
 }
 
@@ -349,6 +349,7 @@ export async function userRegister(registerData: RegisterRequest) {
       username: registerData.username,
       password: registerData.password,
       confirmPassword: registerData.confirmPassword,
+      email: registerData.email,
     }
 
     await createUser(createUserData)
@@ -368,7 +369,7 @@ export async function userRegister(registerData: RegisterRequest) {
     })
 
     console.error('[User Register] 注册失败:', standardError.message)
-    throw new Error(standardError.userMessage)
+    throw new Error(standardError.message)
   }
 }
 

@@ -70,7 +70,7 @@ export const HTTP_STATUS = {
 
 /** 业务错误码 */
 export const BUSINESS_ERROR_CODES = {
-  SUCCESS: 200,
+  SUCCESS: 0,
   UNAUTHORIZED: 401,
   FORBIDDEN: 403,
   NOT_FOUND: 404,
