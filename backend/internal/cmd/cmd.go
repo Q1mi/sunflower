@@ -46,6 +46,9 @@ var (
 					points.NewV1(),
 				)
 			})
+			// 生成 API 文档
+			s.SetOpenApiPath("/api.json")
+			s.SetSwaggerPath("/swagger")
 			// 开启定时任务
 			_, err = gcron.Add(ctx, "# 0 18 * * *", func(ctx context.Context) {
 				g.Log().Print(ctx, "每天18点跑定时任务")
@@ -55,6 +58,7 @@ var (
 			if err != nil {
 				panic(err)
 			}
+
 			s.Run()
 			return nil
 		},
